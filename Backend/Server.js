@@ -8,7 +8,9 @@ const app = express();
 const PORT = process.env.PORT || 5000;
 
 // Middleware
-app.use(cors());
+app.use(cors({
+  origin: "https://superlative-valkyrie-ff25cf.netlify.app", // Netlify ka frontend URL
+}));
 app.use(bodyParser.json());
 
 // Route to send email
@@ -23,14 +25,14 @@ app.post("/send-email", async (req, res) => {
     const transporter = nodemailer.createTransport({
       service: "gmail",
       auth: {
-        user: "grovernitin0428@gmail.com", // Your email
+        user: "grovernitin0428@gmail.com", // Aapka email
         pass: "vxrbnjcjmqlragyg", // Gmail App Password
       },
     });
 
     const mailOptions = {
       from: `"${name}" <${email}>`,
-      to: "grovernitin0428@gmail.com", // Your email
+      to: "grovernitin0428@gmail.com", // Aapka email
       subject: `New message from ${name}: ${subject}`,
       text: message,
     };
