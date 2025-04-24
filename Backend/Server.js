@@ -1,10 +1,11 @@
+// server.js
 const express = require("express");
 const nodemailer = require("nodemailer");
 const cors = require("cors");
 const bodyParser = require("body-parser");
 
 const app = express();
-const PORT = 5000;
+const PORT = process.env.PORT || 5000;
 
 // Middleware
 app.use(cors());
@@ -22,14 +23,14 @@ app.post("/send-email", async (req, res) => {
     const transporter = nodemailer.createTransport({
       service: "gmail",
       auth: {
-        user: "grovernitin0428@gmail.com",
+        user: "grovernitin0428@gmail.com", // Your email
         pass: "vxrbnjcjmqlragyg", // Gmail App Password
       },
     });
 
     const mailOptions = {
       from: `"${name}" <${email}>`,
-      to: "grovernitin0428@gmail.com",
+      to: "grovernitin0428@gmail.com", // Your email
       subject: `New message from ${name}: ${subject}`,
       text: message,
     };
