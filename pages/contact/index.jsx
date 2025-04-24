@@ -57,7 +57,6 @@ const Contact = () => {
           message,
         }),
       });
-    
 
       const data = await response.json();
 
@@ -147,20 +146,12 @@ const Contact = () => {
               disabled={loading}
             >
               <span
-                className={`transition-all duration-500 ${
-                  loading
-                    ? "opacity-0 -translate-y-full"
-                    : "group-hover:-translate-y-[120%] group-hover:opacity-0"
-                }`}
+                className={`transition-all duration-500 ${loading ? "opacity-0 -translate-y-full" : "group-hover:-translate-y-[120%] group-hover:opacity-0"}`}
               >
                 {loading ? "Sending..." : "Let's talk"}
               </span>
               <BsArrowRight
-                className={`absolute text-[22px] transition-all duration-300 ${
-                  loading
-                    ? "opacity-0"
-                    : "group-hover:opacity-100 group-hover:translate-y-0 -translate-y-full opacity-0"
-                }`}
+                className={`absolute text-[22px] transition-all duration-300 ${loading ? "opacity-0" : "group-hover:opacity-100 group-hover:translate-y-0 -translate-y-full opacity-0"}`}
               />
             </button>
           </motion.form>
