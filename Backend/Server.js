@@ -8,9 +8,9 @@ const app = express();
 const PORT = process.env.PORT || 5000;
 
 // Middleware
-app.use(cors({
-  origin: "https://superlative-valkyrie-ff25cf.netlify.app", // Netlify ka frontend URL
-}));
+app.use(cors());
+  
+
 app.use(bodyParser.json());
 
 // Route to send email
