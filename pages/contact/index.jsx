@@ -45,7 +45,7 @@ const Contact = () => {
     setLoading(true);
 
     try {
-      const response = await fetch("https://vaildleads.onrender.com/send-email", {
+      const response = await fetch("https://vaildleads-3.onrender.com/send-email", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
