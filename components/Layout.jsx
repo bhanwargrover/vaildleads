@@ -19,25 +19,26 @@ const Layout = ({ children }) => {
     >
       {/* metadata */}
       <Head>
-        <title>Nitin  | Portfolio</title>
-        <meta
-          name="description"
-          content=""
-        />
-        <meta
-          name="keywords"
-          content="r"
-        />
+        <title>Nitin | Portfolio</title>
+        <meta name="description" content="" />
+        <meta name="keywords" content="r" />
         <meta name="" content="" />
         <meta name="theme-color" content="#f13024" />
       </Head>
 
+      {/* TopLeftImg Component */}
       <TopLeftImg />
+
+      {/* Navigation - Mobile-friendly */}
       <Nav />
+
+      {/* Header */}
       <Header />
 
       {/* main content */}
-      {children}
+      <div className="px-4 sm:px-6 lg:px-8">
+        {children}
+      </div>
     </main>
   );
 };

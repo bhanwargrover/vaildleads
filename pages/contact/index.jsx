@@ -45,7 +45,7 @@ const Contact = () => {
     setLoading(true);
 
     try {
-      const response = await fetch("http://localhost:5000/send-email", {
+      const response = await fetch("https://nitin-backend.onrender.com/send-email", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -106,7 +106,7 @@ const Contact = () => {
                 placeholder="Name"
                 value={form.name}
                 onChange={handleChange}
-                className="input mb-4 sm:mb-0"
+                className="input mb-4 sm:mb-0 w-full sm:w-[48%]"
                 disabled={loading}
                 required
               />
@@ -116,7 +116,7 @@ const Contact = () => {
                 placeholder="E-mail"
                 value={form.email}
                 onChange={handleChange}
-                className="input"
+                className="input w-full sm:w-[48%]"
                 disabled={loading}
                 required
               />
@@ -127,7 +127,7 @@ const Contact = () => {
               placeholder="Subject"
               value={form.subject}
               onChange={handleChange}
-              className="input"
+              className="input w-full"
               disabled={loading}
               required
             />
@@ -136,14 +136,14 @@ const Contact = () => {
               placeholder="Message..."
               value={form.message}
               onChange={handleChange}
-              className="textarea"
+              className="textarea w-full"
               disabled={loading}
               required
               rows={4}
             />
             <button
               type="submit"
-              className="btn rounded-full border border-white/50 max-w-[170px] px-8 transition-all duration-300 flex items-center justify-center overflow-hidden hover:border-accent group relative"
+              className="btn rounded-full border border-white/50 max-w-[170px] px-8 transition-all duration-300 flex items-center justify-center overflow-hidden hover:border-accent group relative w-full sm:w-auto"
               disabled={loading}
             >
               <span

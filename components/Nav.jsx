@@ -17,7 +17,6 @@ export const navData = [
   { name: "about", path: "/about", Icon: HiUser },
   { name: "services", path: "/services", Icon: HiRectangleGroup },
   { name: "work", path: "/work", Icon: HiViewColumns },
-  
   {
     name: "contact",
     path: "/contact",
@@ -29,17 +28,18 @@ const Nav = () => {
   const pathname = usePathname();
 
   return (
-    <nav className="flex flex-col items-center xl:justify-center gap-y-4 fixed h-max bottom-0 mt-auto xl:right-[2%] z-50 top-0 w-full xl:w-16 xl:max-w-md xl:h-screen">
-      <div className="flex w-full xl:flex-col items-center justify-between xl:justify-center gap-y-10 px-4 md:px-40 xl:px-0 h-[80px] xl:h-max py-8 bg-white/10 backdrop-blur-sm text-3xl xl:text-xl xl:rounded-full">
+    <nav className="flex flex-col items-center xl:justify-center gap-y-4 fixed bottom-0 xl:right-[2%] z-50 w-full xl:w-16 xl:max-w-md xl:h-screen">
+      {/* Navbar Container */}
+      <div className="flex w-full xl:flex-col items-center justify-between xl:justify-center gap-y-10 px-4 md:px-40 xl:px-0 py-4 bg-white/10 backdrop-blur-sm text-3xl xl:text-xl xl:rounded-full">
         {navData.map((link, i) => (
           <Link
             className={`${
-              link.path === pathname && "text-accent"
+              link.path === pathname ? "text-accent" : "text-white"
             } relative flex items-center group hover:text-accent transition-all duration-300`}
             href={link.path}
             key={i}
           >
-            {/* tolltip */}
+            {/* Tooltip */}
             <div
               role="tooltip"
               className="absolute pr-14 right-0 hidden xl:group-hover:flex"
@@ -48,8 +48,7 @@ const Nav = () => {
                 <div className="text-[12px] leading-none font-semibold capitalize">
                   {link.name}
                 </div>
-
-                {/* triangle */}
+                {/* Triangle */}
                 <div
                   className="border-solid border-l-white border-l-8 border-y-transparent border-y-[6px] border-r-0 absolute -right-2"
                   aria-hidden
@@ -57,10 +56,8 @@ const Nav = () => {
               </div>
             </div>
 
-            {/* icon */}
-            <div>
-              <link.Icon aria-hidden />
-            </div>
+            {/* Icon */}
+            <div className="text-2xl sm:text-3xl xl:text-4xl">{/* Icon Size Adjustments */}<link.Icon aria-hidden /></div>
           </Link>
         ))}
       </div>

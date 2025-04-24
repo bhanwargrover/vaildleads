@@ -1,9 +1,7 @@
 import { motion } from "framer-motion";
-
 import ParticlesContainer from "../components/ParticlesContainer";
 import ProjectsBtn from "../components/ProjectsBtn";
 import Avatar from "../components/Avatar";
-
 import { fadeIn } from "../variants";
 
 const Home = () => {
@@ -18,7 +16,7 @@ const Home = () => {
             initial="hidden"
             animate="show"
             exit="hidden"
-            className="text-3xl sm:text-4xl md:text-5xl xl:text-6xl font-bold leading-tight"
+            className="text-3xl sm:text-4xl md:text-5xl xl:text-6xl font-bold leading-tight mt-5"
           >
             Crafting Growth-Centric <br /> Into{" "}
             <span className="text-accent">Digital Journeys for Brands</span>
@@ -37,9 +35,8 @@ const Home = () => {
             digital platforms. My expertise includes developing data-driven
             strategies, optimizing websites for search engines (SEO), creating
             compelling content, and utilizing social media platforms to enhance
-            brand visibility and engagement. I am skilled in analyzing
-            performance metrics and continuously improving marketing strategies
-            to achieve measurable results.
+            brand visibility and engagement. 
+           
           </motion.p>
 
           {/* btn */}

@@ -1,18 +1,14 @@
 import Link from "next/link";
-
 import {
-  RiYoutubeLine,
   RiInstagramLine,
+  RiYoutubeLine,
   RiFacebookLine,
   RiDribbbleLine,
-  RiGithubLine,
   RiPinterestLine,
-  
 } from "react-icons/ri";
 import { FaLinkedinIn } from "react-icons/fa";
 
 export const socialData = [
- 
   {
     name: "Instagram",
     link: "https://www.instagram.com/nitinngrover?igsh=MWsxMGU2MWdmbHhrNQ%3D%3D&utm_source=qr",
@@ -21,11 +17,9 @@ export const socialData = [
   {
     name: "Linkedin",
     link: "http://www.linkedin.com/in/nitingrover1616",
-    Icon: FaLinkedinIn
+    Icon: FaLinkedinIn,
   },
- 
-  
- 
+  // Removed Github from the socialData array
 ];
 
 const Socials = () => {
@@ -39,9 +33,9 @@ const Socials = () => {
           target="_blank"
           rel="noreferrer noopener"
           className={`${
-            social.name === "Github"
-              ? "bg-accent rounded-full p-[5px] hover:text-white"
-              : "hover:text-accent"
+            social.name === "Instagram" || social.name === "Linkedin"
+              ? "hover:text-accent"
+              : ""
           } transition-all duration-300`}
         >
           <social.Icon aria-hidden />
